@@ -1,0 +1,179 @@
+def mostrar_menu():
+    print("Menu de opcciones:")
+    print("1) reingresar datos")
+    print("2) cuenta DNI")
+    print("3) tarjeta de creadito")
+    print("4) jubilado")
+    print("5) Salir")
+def reingresar_datos(monto, cantidad):
+    monto=int(input("ingrese el monto nuevo a pagar: "))
+    cantidad=int(input("ingrese la nueva cantidad a comprar: "))
+    total=monto*cantidad
+    return monto, cantidad, total
+def CuentaDNI(monto, cantidad):
+    total=monto*cantidad
+    reintegro=total*0.2
+    print("El subtotal es: $", total)
+    print("El total con el descuento es: $", reintegro)
+def TarjetaCredito(monto, cantidad):
+    total=monto*cantidad
+    print("el total es: $", total)
+    print("Opciones de cuotas sin  interes: 1, 3 y 6 cuotas")
+    print("Opciones de cuotas con interes: 2(15%), 4(17%), 5(20%) y 12(35%) cuotas")
+    cuotas=int(input(" ingrese la cantidad de cuotas: "))
+    if cuotas in [1, 3, 6]:
+        if cuotas==1:
+            print("pagara una cuota de: ", total)
+        if cuotas==3:
+            print(f"pagara 3 cuotas de: , ${total/3:.2f}")
+        if cuotas==6:
+            print(f"pagara 6 cuotas de: , ${total/6:.2f}")
+    elif cuotas==2:
+        interes=total/2*0.15
+        redondeado=round(interes, 2)
+        print("tendra un interes de: $",redondeado)
+        interes2=total/2+redondeado
+        print("pagara 2 cuotas con intereses de: ", interes2)
+    elif cuotas==4:
+        interes=total/4*0.17
+        redondeado=round(interes, 2)
+        print("tendra un interes de: $", redondeado)
+        interes2=total/4+redondeado
+        print("En total pagara 4 cuotas de: $", interes2)
+    elif cuotas==5:
+        interes=total/5*0.20
+        redondeado=round(interes, 2)
+        print("tendra un interes de: $", redondeado)
+        interes2=total/5+redondeado
+        print("En total pagara 5 cuotas de: $", interes2)
+    elif cuotas==12:
+        interes=total/12*0.35
+        redondeado=round(interes, 2)
+        print("tendra un interes de: $", redondeado)
+        interes2=total/12+redondeado
+        print("En total pagara 12 cuotas de: $", interes2)
+    else:
+        print("la opcion es incorrecta, intentalo de nuevo...")
+def jubilado(monto, cantidad):
+    total=monto*cantidad
+    descuento=total*0.15
+    print("El valor sub total del pago es: ", total)
+    print("El valor TOTAL del pago con descuento del 15% es: $", descuento)
+def main():
+    op=1
+    while op!=5:
+        mostrar_menu()
+        op=int(input("ingrese una opcion para abonar: "))
+        if op==5:
+            print("cerrando programa, gracias por visitarnos")
+            break
+        if op==1:
+            monto=int(input("ingrese el monto nuevo a pagar: "))
+            cantidad=int(input("ingrese cantidad nueva a comprar: " ))
+            total=monto*cantidad
+            print(reingresar_datos(monto, cantidad))
+        elif op==2:
+            monto=int(input("ingrese el monto a pagar: "))
+            cantidad=int(input("ingrese cantidad a comprar: "))
+            total=monto*cantidad
+            print(CuentaDNI(monto, cantidad))
+        elif op==3:
+            monto=int(input("ingrese el monto a pagar: "))
+            cantidad=int(input("ingrese cantidad a comprar: " ))
+            total=monto*cantidad
+            print(TarjetaCredito(monto, cantidad))
+        elif op==4:
+            monto=int(input("ingrese el monto a pagar: "))
+            cantidad=int(input("ingrese cantidad a comprar: " ))
+            total=monto*cantidad
+            print(jubilado(monto, cantidad))
+main()def mostrar_menu():
+    print("Menu de opcciones:")
+    print("1) reingresar datos")
+    print("2) cuenta DNI")
+    print("3) tarjeta de creadito")
+    print("4) jubilado")
+    print("5) Salir")
+def reingresar_datos(monto, cantidad):
+    monto=int(input("ingrese el monto nuevo a pagar: "))
+    cantidad=int(input("ingrese la nueva cantidad a comprar: "))
+    total=monto*cantidad
+    return monto, cantidad, total
+def CuentaDNI(monto, cantidad):
+    total=monto*cantidad
+    reintegro=total*0.2
+    print("El subtotal es: $", total)
+    print("El total con el descuento es: $", reintegro)
+def TarjetaCredito(monto, cantidad):
+    total=monto*cantidad
+    print("el total es: $", total)
+    print("Opciones de cuotas sin  interes: 1, 3 y 6 cuotas")
+    print("Opciones de cuotas con interes: 2(15%), 4(17%), 5(20%) y 12(35%) cuotas")
+    cuotas=int(input(" ingrese la cantidad de cuotas: "))
+    if cuotas in [1, 3, 6]:
+        if cuotas==1:
+            print("pagara una cuota de: ", total)
+        if cuotas==3:
+            print(f"pagara 3 cuotas de: , ${total/3:.2f}")
+        if cuotas==6:
+            print(f"pagara 6 cuotas de: , ${total/6:.2f}")
+    elif cuotas==2:
+        interes=total/2*0.15
+        redondeado=round(interes, 2)
+        print("tendra un interes de: $",redondeado)
+        interes2=total/2+redondeado
+        print("pagara 2 cuotas con intereses de: ", interes2)
+    elif cuotas==4:
+        interes=total/4*0.17
+        redondeado=round(interes, 2)
+        print("tendra un interes de: $", redondeado)
+        interes2=total/4+redondeado
+        print("En total pagara 4 cuotas de: $", interes2)
+    elif cuotas==5:
+        interes=total/5*0.20
+        redondeado=round(interes, 2)
+        print("tendra un interes de: $", redondeado)
+        interes2=total/5+redondeado
+        print("En total pagara 5 cuotas de: $", interes2)
+    elif cuotas==12:
+        interes=total/12*0.35
+        redondeado=round(interes, 2)
+        print("tendra un interes de: $", redondeado)
+        interes2=total/12+redondeado
+        print("En total pagara 12 cuotas de: $", interes2)
+    else:
+        print("la opcion es incorrecta, intentalo de nuevo...")
+def jubilado(monto, cantidad):
+    total=monto*cantidad
+    descuento=total*0.15
+    print("El valor sub total del pago es: ", total)
+    print("El valor TOTAL del pago con descuento del 15% es: $", descuento)
+def main():
+    op=1
+    while op!=5:
+        mostrar_menu()
+        op=int(input("ingrese una opcion para abonar: "))
+        if op==5:
+            print("cerrando programa, gracias por visitarnos")
+            break
+        if op==1:
+            monto=int(input("ingrese el monto nuevo a pagar: "))
+            cantidad=int(input("ingrese cantidad nueva a comprar: " ))
+            total=monto*cantidad
+            print(reingresar_datos(monto, cantidad))
+        elif op==2:
+            monto=int(input("ingrese el monto a pagar: "))
+            cantidad=int(input("ingrese cantidad a comprar: "))
+            total=monto*cantidad
+            print(CuentaDNI(monto, cantidad))
+        elif op==3:
+            monto=int(input("ingrese el monto a pagar: "))
+            cantidad=int(input("ingrese cantidad a comprar: " ))
+            total=monto*cantidad
+            print(TarjetaCredito(monto, cantidad))
+        elif op==4:
+            monto=int(input("ingrese el monto a pagar: "))
+            cantidad=int(input("ingrese cantidad a comprar: " ))
+            total=monto*cantidad
+            print(jubilado(monto, cantidad))
+main()
